@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { RadioPlayer } from "@/components/RadioPlayer";
+import { ProgramSchedule } from "@/components/ProgramSchedule";
 import heroImage from "@/assets/radio-hero.jpg";
 import radioLogo from "@/assets/radio-logo.jpg";
 
@@ -32,50 +33,51 @@ const Index = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 py-8">
+      <div className="relative z-10 flex-1 flex flex-col items-center px-4 py-8">
         {/* Header */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-6">
           <img 
             src={radioLogo} 
             alt="Ntepe Manama FM 97.0" 
-            className="w-32 h-32 rounded-full object-cover mb-6 border-4 border-primary/30 shadow-xl mx-auto"
+            className="w-24 h-24 rounded-full object-cover mb-4 border-4 border-primary/30 shadow-xl mx-auto"
           />
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-2">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-1">
             Ntepe Manama FM
           </h1>
-          <p className="text-xl sm:text-2xl font-semibold text-primary">
+          <p className="text-lg sm:text-xl font-semibold text-primary">
             97.0 MHz
-          </p>
-          <p className="text-muted-foreground mt-2">
-            Community Radio • Zimbabwe
           </p>
         </div>
 
         {/* Current time */}
-        <div className="mb-8 text-center">
-          <p className="text-4xl font-mono font-bold text-foreground">
+        <div className="mb-6 text-center">
+          <p className="text-3xl font-mono font-bold text-foreground">
             {formatTime(currentTime)}
           </p>
           <p className="text-sm text-muted-foreground mt-1">
             {currentTime.toLocaleDateString("en-US", {
               weekday: "long",
-              year: "numeric",
-              month: "long",
+              month: "short",
               day: "numeric",
             })}
           </p>
         </div>
 
         {/* Player */}
-        <div className="w-full max-w-md">
-          <div className="bg-card/80 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-border/50">
+        <div className="w-full max-w-md mb-8">
+          <div className="bg-card/80 backdrop-blur-md rounded-2xl p-6 shadow-2xl border border-border/50">
             <RadioPlayer />
           </div>
         </div>
 
+        {/* Program Schedule */}
+        <div className="w-full max-w-md">
+          <ProgramSchedule />
+        </div>
+
         {/* Footer */}
-        <div className="mt-8 text-center text-sm text-muted-foreground">
-          <p>Tune in to the best community programming</p>
+        <div className="mt-6 text-center text-sm text-muted-foreground">
+          <p>Community Radio • Zimbabwe</p>
         </div>
       </div>
     </div>
