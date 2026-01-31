@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { RadioPlayer } from "@/components/RadioPlayer";
 import heroImage from "@/assets/radio-hero.jpg";
+import radioLogo from "@/assets/radio-logo.jpg";
 
 const Index = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -34,9 +35,11 @@ const Index = () => {
       <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 py-8">
         {/* Header */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-primary/20 backdrop-blur-sm mb-6 border-2 border-primary/30">
-            <span className="text-4xl font-bold text-primary">FM</span>
-          </div>
+          <img 
+            src={radioLogo} 
+            alt="Ntepe Manama FM 97.0" 
+            className="w-32 h-32 rounded-full object-cover mb-6 border-4 border-primary/30 shadow-xl mx-auto"
+          />
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-2">
             Ntepe Manama FM
           </h1>
